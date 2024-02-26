@@ -17,8 +17,6 @@ namespace api.Controllers
         {
             this.context = context;
         }
-
-        
         
     }
 }
