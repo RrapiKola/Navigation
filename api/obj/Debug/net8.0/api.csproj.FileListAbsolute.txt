@@ -175,3 +175,4 @@ C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Microsoft.AspNetCore.Id
 C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\u764886\Desktop\Navigation\api\obj\Debug\net8.0\api.sourcelink.json
