@@ -18,8 +18,8 @@ namespace api.Repository
             this.context = context;
         }
 
+       
 
-        
         public async Task<List<Journey>> FindUserJourneys(AppUser user)
         {
             return await context.AppUserJourneys.Where(u=>u.AppUserId == user.Id).Select(journey=>new Journey
@@ -35,5 +35,16 @@ namespace api.Repository
 
             }).ToListAsync();
         }
+
+
+         public async Task<AppUserJourney> Add(AppUserJourney appUserJourney)
+        {
+            await context.AppUserJourneys.AddAsync(appUserJourney);
+            await context.SaveChangesAsync();
+            return appUserJourney;
+        }
+
+
+        
     }
 }

@@ -4,11 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using api.Models;
 
-namespace api.Dtos.Account.Journey
+namespace api.Dtos.Journey
 {
-    public class JourneyDto
+    public class CreateJourneyDto
     {
-        public int Id { get; set; }
         public DateTime StartTime { get; set; }
         public string StartLocation { get; set; } = string.Empty;
         public string ArrivalLocation { get; set; } = string.Empty;
