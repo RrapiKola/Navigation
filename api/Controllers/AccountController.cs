@@ -60,7 +60,7 @@ namespace api.Controllers
         }
 
 
-        [HttpPost("register")]
+        [HttpPost("user/register")]
         public async Task<IActionResult> Register([FromBody] RegisterDto registerDto)
         {
             try
@@ -111,7 +111,7 @@ namespace api.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        [HttpPost("registerAdmin")]
+        [HttpPost("admin/register")]
         public async Task<IActionResult> RegisterAdmin([FromBody] RegisterDto registerDto)
         {
             try

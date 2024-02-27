@@ -8,8 +8,10 @@ namespace api.Interfaces
 {
     public interface IAppUserJourneyRepository
     {
-        Task<List<Journey>> FindUserJourneys(AppUser user);
+        Task<List<Journey>> FindUserJourneys(AppUser appUser);
 
         Task<AppUserJourney> Add(AppUserJourney appUserJourney);
+
+        Task<AppUserJourney?> DeleteUserJourney(AppUser appUser,int journeyId);
     }
 }

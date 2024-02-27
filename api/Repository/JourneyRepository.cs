@@ -18,22 +18,35 @@ namespace api.Repository
         public JourneyRepository(ApplicationDbContext context)
         {
             this.context = context;
-            
+
         }
 
         public async Task<Journey> Add(CreateJourneyDto dto)
         {
-           var journey = dto.MapToModel();
-           await context.Journeys.AddAsync(journey);
-           await context.SaveChangesAsync();
-           return journey;
+            var journey = dto.MapToModel();
+            await context.Journeys.AddAsync(journey);
+            await context.SaveChangesAsync();
+            return journey;
+        }
+
+        public async Task<Journey?> Delete(int journeyId)
+        {
+            var journeyModel = await context.Journeys.FirstOrDefaultAsync(j => j.Id == journeyId);
+            if (journeyModel == null)
+            {
+                return null;
+            }
+
+            context.Journeys.Remove(journeyModel);
+            await context.SaveChangesAsync();
+            return journeyModel;
         }
 
         public async Task<Journey?> FindById(int journeyId)
         {
-            return await context.Journeys.FirstOrDefaultAsync(j=>j.Id==journeyId);
+            return await context.Journeys.FirstOrDefaultAsync(j => j.Id == journeyId);
         }
 
-        
+
     }
 }

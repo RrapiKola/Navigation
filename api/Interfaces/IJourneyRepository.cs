@@ -13,5 +13,7 @@ namespace api.Interfaces
        Task<Journey?>FindById(int journeyId);
 
        Task<Journey>Add(CreateJourneyDto dto);
+
+       Task<Journey?>Delete(int journeyId);
     }
 }

@@ -30,7 +30,7 @@ namespace api.Mappers
 
         public static JourneyDto MapToResponse(this Journey journey) {
             return new JourneyDto {
-                Id = journey.Id,
+                JourneyId = journey.Id,
                 StartTime= journey.StartTime,
                 StartLocation = journey.StartLocation,
                 ArrivalTime = journey.ArrivalTime,

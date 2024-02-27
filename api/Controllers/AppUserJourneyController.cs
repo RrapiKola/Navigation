@@ -6,6 +6,7 @@ using api.Data;
 using api.Dtos.Journey;
 using api.Extensions;
 using api.Interfaces;
+using api.Mappers;
 using api.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -40,8 +41,8 @@ namespace api.Controllers
         {
             var username = User.GetUsername();
             var appUser = await userManager.FindByNameAsync(username);
-            var userJourney = await appUserJourneyRepository.FindUserJourneys(appUser);
-            return Ok(userJourney);
+            var userJourneyList = await appUserJourneyRepository.FindUserJourneys(appUser);
+            return Ok(userJourneyList.Select(j => JourneyMapper.MapToResponse(j)));
         }
 
 
@@ -66,22 +67,22 @@ namespace api.Controllers
                 return BadRequest("Journey not found");
             }
 
-            var userJourney = await appUserJourneyRepository.FindUserJourneys(appUser);
+            var userJourneyList = await appUserJourneyRepository.FindUserJourneys(appUser);
 
-            if (userJourney.Any(j => j.Id == existingJourney.Id))
+            if (userJourneyList.Any(j => j.Id == existingJourney.Id))
             {
                 return BadRequest("Journey already exists; cannot add the same journey");
             }
 
-            var userJourneyModel = new AppUserJourney
+            var appUserJourneyModel = new AppUserJourney
             {
                 AppUserId = appUser.Id,
                 JourneyId = journey.Id
             };
 
-            await appUserJourneyRepository.Add(userJourneyModel);
+            await appUserJourneyRepository.Add(appUserJourneyModel);
 
-            if (userJourneyModel == null)
+            if (appUserJourneyModel == null)
             {
                 return StatusCode(500, "Could not create user journey");
             }
@@ -90,6 +91,31 @@ namespace api.Controllers
                 return Created();
             }
         }
+
+        [Authorize]
+        [HttpDelete]
+        public async Task<IActionResult> Delete(int journeyId){
+            var username = User.GetUsername();
+            var appUser = await userManager.FindByNameAsync(username);
+            var userJourneyList = await appUserJourneyRepository.FindUserJourneys(appUser);
+            var filteredJourney = userJourneyList.Where(j=>j.Id==journeyId).ToList();
+
+            if(filteredJourney.Count()==1){
+                await appUserJourneyRepository.DeleteUserJourney(appUser,journeyId);
+            }
+            else
+            {
+                return BadRequest("Journey is not in your journeys list!");
+            }
+
+            return Ok();
+
+
+        }
+
+
+
+
 
 
 

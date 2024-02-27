@@ -8,7 +8,7 @@ namespace api.Dtos.Account.Journey
 {
     public class JourneyDto
     {
-        public int Id { get; set; }
+        public int JourneyId { get; set; }
         public DateTime StartTime { get; set; }
         public string StartLocation { get; set; } = string.Empty;
         public string ArrivalLocation { get; set; } = string.Empty;
