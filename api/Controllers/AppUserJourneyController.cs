@@ -64,12 +64,13 @@ namespace api.Controllers
                 return BadRequest("User not found");
             }
 
-            var journey = await journeyRepository.Add(dto, appUser);
+            var journey = await journeyRepository.Add(dto);
 
             if (journey == null)
             {
                 return BadRequest("Failed to create journey");
             }
+            
 
             var existingJourney = await journeyRepository.FindById(journey.Id);
 
@@ -99,6 +100,7 @@ namespace api.Controllers
             }
             else
             {
+                var updatedJourney = await journeyRepository.UpdateDailyAchievement(appUser,journey);
                 return Created();
             }
         }

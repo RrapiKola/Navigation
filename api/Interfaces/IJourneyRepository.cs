@@ -13,13 +13,13 @@ namespace api.Interfaces
     {
        Task<Journey?>FindById(int journeyId);
 
-       Task<Journey>Add(CreateJourneyDto dto,AppUser appUser);
+       Task<Journey>Add(CreateJourneyDto dto);
 
        Task<Journey?>Delete(int journeyId);
        Task<List<Journey>> FindAll(QueryObject query);
-
-
        Task<Double> MonthlyRouteDistance();
+
+       Task<Journey?> UpdateDailyAchievement(AppUser appUser,Journey journey);
 
 
     }

@@ -7,10 +7,12 @@ using api.Dtos.Account.Journey;
 using api.Dtos.Journey;
 using api.Interfaces;
 using api.Mappers;
+using api.Migrations;
 using api.Models;
 using api.Utilities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure.Internal;
+using Journey = api.Models.Journey;
 
 namespace api.Repository
 {
@@ -22,29 +24,12 @@ namespace api.Repository
             this.context = context;
         }
 
-        public async Task<Journey> Add(CreateJourneyDto dto, AppUser appUser)
+        public async Task<Journey> Add(CreateJourneyDto dto)
         {
             var journey = dto.MapToModel();
-            // var userJourneyList = await context.AppUserJourneys.Where(u => u.AppUserId == appUser.Id).Select(journey => new
-            //                {
-            //                    journey.Journey.StartTime,
-            //                    journey.Journey.RouteDistance,
-            //                })
-            //                 .ToListAsync();
 
             await context.Journeys.AddAsync(journey);
             await context.SaveChangesAsync();
-
-            // var currentJourneyDate = journey.StartTime.Date;
-            // var routeDistanceSumOfDay = userJourneyList
-            //     .Where(j => j.StartTime.Date == currentJourneyDate)
-            //     .Sum(j => j.RouteDistance);
-            // if (routeDistanceSumOfDay >= 20)
-            // {
-
-            //     journey.DailyAchievement = true;
-            //     await context.SaveChangesAsync();
-            // }
 
             return journey;
         }
@@ -111,6 +96,31 @@ namespace api.Repository
                 .SumAsync(j => j.RouteDistance);
 
             return totalMonthlyDistance;
+        }
+
+        public async Task<Journey?> UpdateDailyAchievement(AppUser appUser, Journey userJourney)
+        {
+            var userJourneyList = await context.AppUserJourneys
+                .Where(u => u.AppUserId == appUser.Id)
+                .Select(j => new
+                {
+                    j.Journey.StartTime,
+                    j.Journey.RouteDistance,
+                })
+                .ToListAsync();
+
+            var currentJourneyDate = userJourney.StartTime.Date;
+            var routeDistanceSumOfDay = userJourneyList
+                .Where(j => j.StartTime.Date == currentJourneyDate)
+                .Sum(j => j.RouteDistance);
+
+            if (routeDistanceSumOfDay >= 20)
+            {
+                userJourney.DailyAchievement = true;
+                await context.SaveChangesAsync();
+            }
+
+            return userJourney;
         }
 
     }
