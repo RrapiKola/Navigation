@@ -41,8 +41,14 @@ namespace api.Controllers
         {
             var username = User.GetUsername();
             var appUser = await userManager.FindByNameAsync(username);
+            if (appUser == null)
+            {
+                return BadRequest("User not found");
+            }
             var userJourneyList = await appUserJourneyRepository.FindUserJourneys(appUser);
-            return Ok(userJourneyList.Select(j => JourneyMapper.MapToResponse(j)));
+
+            var userJourneyListDto = userJourneyList.Select(JourneyMapper.MapToResponse).ToList();
+            return Ok(userJourneyListDto);
         }
 
 
@@ -53,7 +59,12 @@ namespace api.Controllers
             var username = User.GetUsername();
             var appUser = await userManager.FindByNameAsync(username);
 
-            var journey = await journeyRepository.Add(dto);
+            if (appUser == null)
+            {
+                return BadRequest("User not found");
+            }
+
+            var journey = await journeyRepository.Add(dto, appUser);
 
             if (journey == null)
             {
@@ -94,14 +105,20 @@ namespace api.Controllers
 
         [Authorize]
         [HttpDelete]
-        public async Task<IActionResult> Delete(int journeyId){
+        public async Task<IActionResult> Delete(int journeyId)
+        {
             var username = User.GetUsername();
             var appUser = await userManager.FindByNameAsync(username);
+            if (appUser == null)
+            {
+                return BadRequest("User not found");
+            }
             var userJourneyList = await appUserJourneyRepository.FindUserJourneys(appUser);
-            var filteredJourney = userJourneyList.Where(j=>j.Id==journeyId).ToList();
+            var filteredJourney = userJourneyList.Where(j => j.Id == journeyId).ToList();
 
-            if(filteredJourney.Count()==1){
-                await appUserJourneyRepository.DeleteUserJourney(appUser,journeyId);
+            if (filteredJourney.Count() == 1)
+            {
+                await appUserJourneyRepository.DeleteUserJourney(appUser, journeyId);
             }
             else
             {
@@ -112,16 +129,6 @@ namespace api.Controllers
 
 
         }
-
-
-
-
-
-
-
-
-
-
 
     }
 }

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using api.Dtos.Account.Journey;
 using api.Dtos.Journey;
 using api.Models;
+using api.Utilities;
 
 namespace api.Interfaces
 {
@@ -12,8 +13,14 @@ namespace api.Interfaces
     {
        Task<Journey?>FindById(int journeyId);
 
-       Task<Journey>Add(CreateJourneyDto dto);
+       Task<Journey>Add(CreateJourneyDto dto,AppUser appUser);
 
        Task<Journey?>Delete(int journeyId);
+       Task<List<Journey>> FindAll(QueryObject query);
+
+
+       Task<Double> MonthlyRouteDistance();
+
+
     }
 }

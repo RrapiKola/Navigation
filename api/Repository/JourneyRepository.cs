@@ -8,7 +8,9 @@ using api.Dtos.Journey;
 using api.Interfaces;
 using api.Mappers;
 using api.Models;
+using api.Utilities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure.Internal;
 
 namespace api.Repository
 {
@@ -18,14 +20,32 @@ namespace api.Repository
         public JourneyRepository(ApplicationDbContext context)
         {
             this.context = context;
-
         }
 
-        public async Task<Journey> Add(CreateJourneyDto dto)
+        public async Task<Journey> Add(CreateJourneyDto dto, AppUser appUser)
         {
             var journey = dto.MapToModel();
+            // var userJourneyList = await context.AppUserJourneys.Where(u => u.AppUserId == appUser.Id).Select(journey => new
+            //                {
+            //                    journey.Journey.StartTime,
+            //                    journey.Journey.RouteDistance,
+            //                })
+            //                 .ToListAsync();
+
             await context.Journeys.AddAsync(journey);
             await context.SaveChangesAsync();
+
+            // var currentJourneyDate = journey.StartTime.Date;
+            // var routeDistanceSumOfDay = userJourneyList
+            //     .Where(j => j.StartTime.Date == currentJourneyDate)
+            //     .Sum(j => j.RouteDistance);
+            // if (routeDistanceSumOfDay >= 20)
+            // {
+
+            //     journey.DailyAchievement = true;
+            //     await context.SaveChangesAsync();
+            // }
+
             return journey;
         }
 
@@ -47,6 +67,51 @@ namespace api.Repository
             return await context.Journeys.FirstOrDefaultAsync(j => j.Id == journeyId);
         }
 
+
+        public async Task<List<Journey>> FindAll(QueryObject query)
+        {
+            var queryable = context.Journeys.AsQueryable();
+
+
+            if (!string.IsNullOrEmpty(query.UserId))
+            {
+                queryable = queryable.Where(j => j.AppUserJourneys.Any(aj => aj.AppUserId == query.UserId));
+            }
+
+            if (query.StartTime.HasValue)
+            {
+                queryable = queryable.Where(j => j.StartTime == query.StartTime.Value);
+            }
+
+
+            if (query.ArrivalTime.HasValue)
+            {
+                queryable = queryable.Where(j => j.ArrivalTime == query.ArrivalTime.Value);
+            }
+
+            if (query.TransportationType.HasValue)
+            {
+                queryable = queryable.Where(j => j.TransportationType == query.TransportationType.Value);
+            }
+
+            return await queryable.ToListAsync();
+
+        }
+
+        public async Task<double> MonthlyRouteDistance()
+        {
+            DateTime currentUtcDateTime = DateTime.UtcNow;
+            int currentMonth = currentUtcDateTime.Month;
+
+            DateTime startOfMonth = new DateTime(currentUtcDateTime.Year, currentMonth, 1, 0, 0, 0, DateTimeKind.Utc);
+            DateTime endOfMonth = startOfMonth.AddMonths(1).AddSeconds(-1);
+
+            var totalMonthlyDistance = await context.Journeys
+                .Where(j => j.StartTime >= startOfMonth && j.ArrivalTime <= endOfMonth)
+                .SumAsync(j => j.RouteDistance);
+
+            return totalMonthlyDistance;
+        }
 
     }
 }

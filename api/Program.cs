@@ -45,8 +45,9 @@ builder.Services.AddSwaggerGen(option =>
     });
 });
 builder.Services.AddScoped<ITokenService,TokenService>();
-builder.Services.AddScoped<IJourneyRepository,JourneyRepository>();
 builder.Services.AddScoped<IAppUserJourneyRepository,AppUserJourneyRepository>();
+builder.Services.AddScoped<IJourneyRepository,JourneyRepository>();
+
 
 
 

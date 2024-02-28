@@ -11,7 +11,7 @@ namespace api.Models
     {
 
         // public int Id { get; set; }
-        public string AppUserId { get; set; }
+        public string AppUserId { get; set; }=string.Empty;
         public int JourneyId { get; set; }
         public AppUser AppUser { get; set; }
         public Journey Journey { get; set; }

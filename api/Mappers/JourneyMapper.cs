@@ -37,6 +37,7 @@ namespace api.Mappers
                 ArrivalLocation = journey.ArrivalLocation,
                 RouteDistance = journey.RouteDistance,
                 TransportationType = journey.TransportationType,
+                DailyAchievement = journey.DailyAchievement
             };
         }
 
