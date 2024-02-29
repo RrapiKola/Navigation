@@ -55,31 +55,41 @@ namespace api.Repository
 
         public async Task<List<Journey>> FindAll(QueryObject query)
         {
-            var queryable = context.Journeys.AsQueryable();
+            var journeys = context.Journeys.AsQueryable();
 
 
             if (!string.IsNullOrEmpty(query.UserId))
             {
-                queryable = queryable.Where(j => j.AppUserJourneys.Any(aj => aj.AppUserId == query.UserId));
+                journeys = journeys.Where(j => j.AppUserJourneys.Any(aj => aj.AppUserId == query.UserId));
             }
 
             if (query.StartTime.HasValue)
             {
-                queryable = queryable.Where(j => j.StartTime == query.StartTime.Value);
+                journeys = journeys.Where(j => j.StartTime == query.StartTime.Value);
             }
 
 
             if (query.ArrivalTime.HasValue)
             {
-                queryable = queryable.Where(j => j.ArrivalTime == query.ArrivalTime.Value);
+                journeys = journeys.Where(j => j.ArrivalTime == query.ArrivalTime.Value);
             }
 
             if (query.TransportationType.HasValue)
             {
-                queryable = queryable.Where(j => j.TransportationType == query.TransportationType.Value);
+                journeys = journeys.Where(j => j.TransportationType == query.TransportationType.Value);
             }
 
-            return await queryable.ToListAsync();
+            if(!string.IsNullOrEmpty(query.SortBy))
+            {
+                if(query.SortBy.Equals("TransportationType",StringComparison.OrdinalIgnoreCase)){
+                    journeys = query.IsDecsending ? journeys.OrderByDescending(t=>t.TransportationType) : journeys.OrderBy(t=>t.TransportationType);
+                }
+            }
+
+
+            var skipNumber = (query.PageNumber-1)*query.PageSize;
+
+            return await journeys.Skip(skipNumber).Take(query.PageSize).ToListAsync();
 
         }
 
