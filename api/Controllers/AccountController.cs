@@ -40,8 +40,6 @@ namespace api.Controllers
 
             var user = await userManager.Users.FirstOrDefaultAsync(user => user.UserName == loginDto.Username.ToLower());
 
-            // var user = await userManager.Users.FirstOrDefaultAsync(user => user.Email == loginDto.Email.ToLower());
-
             if (user == null) return Unauthorized("Invalid username!");
 
             var result = await signInManager.CheckPasswordSignInAsync(user, loginDto.Password, false);
@@ -55,8 +53,6 @@ namespace api.Controllers
                     Token = tokenService.CreateToken(user)
                 }
             );
-
-
         }
 
 
@@ -80,7 +76,7 @@ namespace api.Controllers
                 var createdUser = await userManager.CreateAsync(appUser, registerDto.Password);
                 if (createdUser.Succeeded)
                 {
-                    var roleResult = await userManager.AddToRoleAsync(appUser, "User");
+                    var roleResult = await userManager.AddToRoleAsync(appUser, RoleConstants.User);
                     if (roleResult.Succeeded)
                     {
                         return Ok(

@@ -50,8 +50,5 @@ namespace api.Controllers
             return Ok(await journeyRepository.MonthlyRouteDistance());
         }
 
-
-
-        
     }
 }
