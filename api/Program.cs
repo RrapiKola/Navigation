@@ -89,6 +89,7 @@ options.DefaultSignOutScheme= JwtBearerDefaults.AuthenticationScheme;
 
 builder.Services.AddAuthorization(options => {
     options.AddPolicy("RequireAdminRole", policy => policy.RequireRole("Admin"));
+    options.AddPolicy("RequireUserRole", policy => policy.RequireRole("User"));
     // Add more policies as needed
 });
 
