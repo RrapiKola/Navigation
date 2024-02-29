@@ -41,6 +41,10 @@ C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\api.pdb
 C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Azure.Identity.dll
 C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Humanizer.dll
+C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
@@ -54,6 +58,9 @@ C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Microsoft.EntityFramewo
 C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Microsoft.Identity.Client.dll
 C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
 C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
@@ -154,6 +161,7 @@ C:\Users\u764886\Desktop\Navigation\api\obj\Debug\net8.0\api.AssemblyInfo.cs
 C:\Users\u764886\Desktop\Navigation\api\obj\Debug\net8.0\api.csproj.CoreCompileInputs.cache
 C:\Users\u764886\Desktop\Navigation\api\obj\Debug\net8.0\api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\u764886\Desktop\Navigation\api\obj\Debug\net8.0\api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\u764886\Desktop\Navigation\api\obj\Debug\net8.0\api.sourcelink.json
 C:\Users\u764886\Desktop\Navigation\api\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\u764886\Desktop\Navigation\api\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\u764886\Desktop\Navigation\api\obj\Debug\net8.0\staticwebassets\msbuild.api.Microsoft.AspNetCore.StaticWebAssets.props
@@ -168,11 +176,3 @@ C:\Users\u764886\Desktop\Navigation\api\obj\Debug\net8.0\refint\api.dll
 C:\Users\u764886\Desktop\Navigation\api\obj\Debug\net8.0\api.pdb
 C:\Users\u764886\Desktop\Navigation\api\obj\Debug\net8.0\api.genruntimeconfig.cache
 C:\Users\u764886\Desktop\Navigation\api\obj\Debug\net8.0\ref\api.dll
-C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
-C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
-C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
-C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
-C:\Users\u764886\Desktop\Navigation\api\obj\Debug\net8.0\api.sourcelink.json

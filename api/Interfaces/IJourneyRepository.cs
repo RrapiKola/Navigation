@@ -19,7 +19,7 @@ namespace api.Interfaces
        Task<List<Journey>> FindAll(QueryObject query);
        Task<Double> MonthlyRouteDistance();
 
-       Task<Journey?> UpdateDailyAchievement(AppUser appUser,Journey journey);
+       Task<JourneyDto?> UpdateDailyAchievement(AppUser appUser,Journey journey);
 
 
     }

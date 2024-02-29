@@ -87,6 +87,11 @@ options.DefaultSignOutScheme= JwtBearerDefaults.AuthenticationScheme;
   };
 });
 
+builder.Services.AddAuthorization(options => {
+    options.AddPolicy("RequireAdminRole", policy => policy.RequireRole("Admin"));
+    // Add more policies as needed
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

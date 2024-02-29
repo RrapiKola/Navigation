@@ -15,6 +15,7 @@ namespace api.Controllers
 {
     [ApiController]
     [Route("api/account")]
+    [Produces("application/json")]
     public class AccountController : ControllerBase
     {
         private readonly UserManager<AppUser> userManager;
@@ -45,12 +46,14 @@ namespace api.Controllers
             var result = await signInManager.CheckPasswordSignInAsync(user, loginDto.Password, false);
 
             if (!result.Succeeded) return Unauthorized("Username or password notfound or incorrect");
+
+            var roles = await userManager.GetRolesAsync(user);
             return Ok(
                 new NewUserDto
                 {
                     UserName = user.UserName,
                     Email = user.Email,
-                    Token = tokenService.CreateToken(user)
+                    Token = tokenService.CreateToken(user,roles)
                 }
             );
         }
@@ -84,7 +87,7 @@ namespace api.Controllers
                             {
                                 UserName = appUser.UserName,
                                 Email = appUser.Email,
-                                Token = tokenService.CreateToken(appUser)
+                                Token = tokenService.CreateToken(appUser, new List<string>())
                             }
                         );
                     }

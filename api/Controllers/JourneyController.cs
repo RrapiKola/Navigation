@@ -16,23 +16,20 @@ namespace api.Controllers
 {
     [ApiController]
     [Route("api/journey")]
+    [Authorize(Roles = "Admin")]
     public class JourneyController : ControllerBase
     {
-        private readonly ApplicationDbContext context;
-        private readonly UserManager<AppUser> userManager;
+
         private readonly IJourneyRepository journeyRepository;
 
-        public JourneyController(ApplicationDbContext context,UserManager<AppUser> userManager,IJourneyRepository journeyRepository)
+        public JourneyController(IJourneyRepository journeyRepository)
         {
-            this.context = context;
-            this.userManager = userManager;
+
             this.journeyRepository = journeyRepository;
         }
 
-
         
         [HttpGet]
-        // [Authorize(Roles = "Admin")]
         public async Task<IActionResult> FindAll([FromQuery] QueryObject query) {
 
             if(!ModelState.IsValid){

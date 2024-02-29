@@ -98,7 +98,7 @@ namespace api.Repository
             return totalMonthlyDistance;
         }
 
-        public async Task<Journey?> UpdateDailyAchievement(AppUser appUser, Journey userJourney)
+        public async Task<JourneyDto?> UpdateDailyAchievement(AppUser appUser, Journey userJourney)
         {
             var userJourneyList = await context.AppUserJourneys
                 .Where(u => u.AppUserId == appUser.Id)
@@ -120,7 +120,7 @@ namespace api.Repository
                 await context.SaveChangesAsync();
             }
 
-            return userJourney;
+            return userJourney.MapToResponse();
         }
 
     }

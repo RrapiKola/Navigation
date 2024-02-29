@@ -25,13 +25,14 @@ namespace api.Services
         }
 
 
-
-        public string CreateToken(AppUser appUser)
+        public string CreateToken(AppUser appUser, IList<string> roles)
         {
             var claims = new List<Claim>{
                 new Claim(JwtRegisteredClaimNames.Email,appUser.Email),
                 new Claim(JwtRegisteredClaimNames.GivenName,appUser.UserName)
             };
+
+            claims.AddRange(roles.Select(role => new Claim(ClaimTypes.Role, role)));
 
             var credetials = new SigningCredentials(symmetricSecurityKey,SecurityAlgorithms.HmacSha512Signature);
             var tokenDescriptor = new SecurityTokenDescriptor{
