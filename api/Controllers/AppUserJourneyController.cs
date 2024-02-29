@@ -101,7 +101,7 @@ namespace api.Controllers
             else
             {
                 var updatedJourneyDto = await journeyRepository.UpdateDailyAchievement(appUser,journey);
-                return Created();
+                return Created(nameof(AddUserJourney), updatedJourneyDto);
             }
         }
 
