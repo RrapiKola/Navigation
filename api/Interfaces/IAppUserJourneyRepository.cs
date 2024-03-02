@@ -12,6 +12,6 @@ namespace api.Interfaces
 
         Task<AppUserJourney> Add(AppUserJourney appUserJourney);
 
-        Task<AppUserJourney?> DeleteUserJourney(AppUser appUser,int journeyId);
+        Task<AppUserJourney?> DeleteUserJourney(AppUser appUser, int journeyId);
     }
 }

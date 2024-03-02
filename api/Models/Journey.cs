@@ -18,7 +18,7 @@ namespace api.Models
         public TransportationType TransportationType { get; set; }
         public double RouteDistance { get; set; }
         public bool DailyAchievement { get; set; }
-        public List<AppUserJourney> AppUserJourneys { get; set; }= new List<AppUserJourney>();
+        public List<AppUserJourney> AppUserJourneys { get; set; } = new List<AppUserJourney>();
 
     }
 }

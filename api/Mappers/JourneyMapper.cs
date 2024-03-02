@@ -28,10 +28,12 @@ namespace api.Mappers
         }
 
 
-        public static JourneyDto MapToResponse(this Journey journey) {
-            return new JourneyDto {
+        public static JourneyDto MapToResponse(this Journey journey)
+        {
+            return new JourneyDto
+            {
                 JourneyId = journey.Id,
-                StartTime= journey.StartTime,
+                StartTime = journey.StartTime,
                 StartLocation = journey.StartLocation,
                 ArrivalTime = journey.ArrivalTime,
                 ArrivalLocation = journey.ArrivalLocation,

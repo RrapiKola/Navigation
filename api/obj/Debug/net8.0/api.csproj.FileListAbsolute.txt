@@ -176,3 +176,10 @@ C:\Users\u764886\Desktop\Navigation\api\obj\Debug\net8.0\refint\api.dll
 C:\Users\u764886\Desktop\Navigation\api\obj\Debug\net8.0\api.pdb
 C:\Users\u764886\Desktop\Navigation\api\obj\Debug\net8.0\api.genruntimeconfig.cache
 C:\Users\u764886\Desktop\Navigation\api\obj\Debug\net8.0\ref\api.dll
+C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\Castle.Core.dll
+C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\FakeItEasy.dll
+C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\FluentAssertions.dll
+C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\xunit.abstractions.dll
+C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\xunit.assert.dll
+C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\xunit.core.dll
+C:\Users\u764886\Desktop\Navigation\api\bin\Debug\net8.0\xunit.execution.dotnet.dll

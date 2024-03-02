@@ -54,7 +54,7 @@ namespace api.Controllers
                 {
                     UserName = user.UserName,
                     Email = user.Email,
-                    Token = tokenService.CreateToken(user,roles)
+                    Token = tokenService.CreateToken(user, roles)
                 }
             );
         }

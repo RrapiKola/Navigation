@@ -79,15 +79,16 @@ namespace api.Repository
                 journeys = journeys.Where(j => j.TransportationType == query.TransportationType.Value);
             }
 
-            if(!string.IsNullOrEmpty(query.SortBy))
+            if (!string.IsNullOrEmpty(query.SortBy))
             {
-                if(query.SortBy.Equals("TransportationType",StringComparison.OrdinalIgnoreCase)){
-                    journeys = query.IsDecsending ? journeys.OrderByDescending(t=>t.TransportationType) : journeys.OrderBy(t=>t.TransportationType);
+                if (query.SortBy.Equals("TransportationType", StringComparison.OrdinalIgnoreCase))
+                {
+                    journeys = query.IsDecsending ? journeys.OrderByDescending(t => t.TransportationType) : journeys.OrderBy(t => t.TransportationType);
                 }
             }
 
 
-            var skipNumber = (query.PageNumber-1)*query.PageSize;
+            var skipNumber = (query.PageNumber - 1) * query.PageSize;
 
             return await journeys.Skip(skipNumber).Take(query.PageSize).ToListAsync();
 

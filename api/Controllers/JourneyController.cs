@@ -28,22 +28,25 @@ namespace api.Controllers
             this.journeyRepository = journeyRepository;
         }
 
-        
-        [HttpGet]
-        public async Task<IActionResult> FindAll([FromQuery] QueryObject query) {
 
-            if(!ModelState.IsValid){
+        [HttpGet]
+        public async Task<IActionResult> FindAll([FromQuery] QueryObject query)
+        {
+
+            if (!ModelState.IsValid)
+            {
                 return BadRequest(ModelState);
             }
 
             var journeyList = await journeyRepository.FindAll(query);
-            var journeyListDto = journeyList.Select(j=>j.MapToResponse());
+            var journeyListDto = journeyList.Select(j => j.MapToResponse());
 
             return Ok(journeyListDto);
         }
 
-        [HttpGet("monthlyRoute")]
-        public async Task<IActionResult> FindMonthlyDistance(){
+        [HttpGet("totalMonthlyRoute")]
+        public async Task<IActionResult> FindMonthlyDistance()
+        {
             return Ok(await journeyRepository.MonthlyRouteDistance());
         }
 

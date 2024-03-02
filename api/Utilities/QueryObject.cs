@@ -9,7 +9,7 @@ namespace api.Utilities
 {
     public class QueryObject
     {
-        
+
         public string UserId { get; set; } = string.Empty;
 
         // You can specify a range of valid values for TransportationType if needed
@@ -24,8 +24,8 @@ namespace api.Utilities
         public string? SortBy { get; set; } = null;
         public bool IsDecsending { get; set; } = false;
 
-        public int PageNumber { get; set; }=1;
-        public int PageSize { get; set; }=10;
+        public int PageNumber { get; set; } = 1;
+        public int PageSize { get; set; } = 10;
 
     }
 }

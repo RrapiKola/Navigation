@@ -21,11 +21,11 @@ namespace api.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<AppUserJourney>(x=>x.HasKey(a=> new{a.AppUserId,a.JourneyId}));
+            builder.Entity<AppUserJourney>(x => x.HasKey(a => new { a.AppUserId, a.JourneyId }));
             // builder.Entity<AppUserJourney>(x =>x.HasKey(a => a.Id));
 
-            builder.Entity<AppUserJourney>().HasOne(u=>u.AppUser).WithMany(u=>u.AppUserJourneys).HasForeignKey(a=>a.AppUserId);
-            builder.Entity<AppUserJourney>().HasOne(u=>u.Journey).WithMany(u=>u.AppUserJourneys).HasForeignKey(a=>a.JourneyId);
+            builder.Entity<AppUserJourney>().HasOne(u => u.AppUser).WithMany(u => u.AppUserJourneys).HasForeignKey(a => a.AppUserId);
+            builder.Entity<AppUserJourney>().HasOne(u => u.Journey).WithMany(u => u.AppUserJourneys).HasForeignKey(a => a.JourneyId);
 
             base.OnModelCreating(builder);
             List<IdentityRole> roles = new List<IdentityRole>{
@@ -41,9 +41,6 @@ namespace api.Data
             builder.Entity<IdentityRole>().HasData(roles);
 
         }
-
-
-
 
     }
 }

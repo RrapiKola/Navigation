@@ -15,13 +15,13 @@ namespace api.Services
     {
         private readonly IConfiguration configuration;
         private readonly SymmetricSecurityKey symmetricSecurityKey;
-        
+
         public TokenService(IConfiguration configuration)
         {
             symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:SigninKey"]));
-            
+
             this.configuration = configuration;
-            
+
         }
 
 
@@ -34,10 +34,11 @@ namespace api.Services
 
             claims.AddRange(roles.Select(role => new Claim(ClaimTypes.Role, role)));
 
-            var credetials = new SigningCredentials(symmetricSecurityKey,SecurityAlgorithms.HmacSha512Signature);
-            var tokenDescriptor = new SecurityTokenDescriptor{
+            var credetials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha512Signature);
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
                 Subject = new ClaimsIdentity(claims),
-                Expires= DateTime.Now.AddDays(7),
+                Expires = DateTime.Now.AddDays(7),
                 SigningCredentials = credetials,
                 Issuer = configuration["JWT:Issuer"],
                 Audience = configuration["JWT:Audience"]

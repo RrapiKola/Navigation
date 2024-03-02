@@ -11,15 +11,15 @@ namespace api.Interfaces
 {
     public interface IJourneyRepository
     {
-       Task<Journey?>FindById(int journeyId);
+        Task<Journey?> FindById(int journeyId);
 
-       Task<Journey>Add(CreateJourneyDto dto);
+        Task<Journey> Add(CreateJourneyDto dto);
 
-       Task<Journey?>Delete(int journeyId);
-       Task<List<Journey>> FindAll(QueryObject query);
-       Task<Double> MonthlyRouteDistance();
+        Task<Journey?> Delete(int journeyId);
+        Task<List<Journey>> FindAll(QueryObject query);
+        Task<Double> MonthlyRouteDistance();
 
-       Task<JourneyDto?> UpdateDailyAchievement(AppUser appUser,Journey journey);
+        Task<JourneyDto?> UpdateDailyAchievement(AppUser appUser, Journey journey);
 
 
     }

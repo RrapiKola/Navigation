@@ -70,7 +70,7 @@ namespace api.Controllers
             {
                 return BadRequest("Failed to create journey");
             }
-            
+
 
             var existingJourney = await journeyRepository.FindById(journey.Id);
 
@@ -100,7 +100,7 @@ namespace api.Controllers
             }
             else
             {
-                var updatedJourneyDto = await journeyRepository.UpdateDailyAchievement(appUser,journey);
+                var updatedJourneyDto = await journeyRepository.UpdateDailyAchievement(appUser, journey);
                 return Created(nameof(AddUserJourney), updatedJourneyDto);
             }
         }

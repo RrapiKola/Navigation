@@ -6,19 +6,19 @@ namespace api.Models
     {
         [EnumMember(Value = "Car")]
         Car,
-        
+
         [EnumMember(Value = "Bus")]
         Bus,
-        
+
         [EnumMember(Value = "Train")]
         Train,
-        
+
         [EnumMember(Value = "Plane")]
         Plane,
-        
+
         [EnumMember(Value = "Bicycle")]
         Bicycle,
-        
+
         [EnumMember(Value = "Walking")]
         Walking
     }

@@ -1,11 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "a+4KbT/gmRwkkBSJWmiyehgGF12PT59IyE+6nN0SGbEziEqBgytFoG3rL5/y/VoTyxXfCzEF9zJcEcjtjD5KWA==",
+  "dgSpecHash": "tympgQrevco97zwU6xsJOucTB4YQaEmC2rTw8cFw9yM1bxwdJvUNMNPEIMwd+s2zaB5XIwSTrMTZRiA1b0JGiw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\u764886\\Desktop\\Navigation\\api\\api.csproj",
+  "projectFilePath": "c:\\Users\\u764886\\Desktop\\Navigation\\api\\api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\u764886\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\u764886\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\u764886\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
+    "C:\\Users\\u764886\\.nuget\\packages\\fakeiteasy\\8.1.0\\fakeiteasy.8.1.0.nupkg.sha512",
+    "C:\\Users\\u764886\\.nuget\\packages\\fakeiteasy.extensions.valuetask\\8.1.0\\fakeiteasy.extensions.valuetask.8.1.0.nupkg.sha512",
+    "C:\\Users\\u764886\\.nuget\\packages\\fluentassertions\\6.12.0\\fluentassertions.6.12.0.nupkg.sha512",
     "C:\\Users\\u764886\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\u764886\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.2\\microsoft.aspnetcore.authentication.jwtbearer.8.0.2.nupkg.sha512",
     "C:\\Users\\u764886\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.2\\microsoft.aspnetcore.cryptography.internal.8.0.2.nupkg.sha512",
@@ -66,6 +70,7 @@
     "C:\\Users\\u764886\\.nuget\\packages\\system.composition.typedparts\\6.0.0\\system.composition.typedparts.6.0.0.nupkg.sha512",
     "C:\\Users\\u764886\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.1\\system.configuration.configurationmanager.6.0.1.nupkg.sha512",
     "C:\\Users\\u764886\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.1\\system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
+    "C:\\Users\\u764886\\.nuget\\packages\\system.diagnostics.eventlog\\6.0.0\\system.diagnostics.eventlog.6.0.0.nupkg.sha512",
     "C:\\Users\\u764886\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
     "C:\\Users\\u764886\\.nuget\\packages\\system.formats.asn1\\5.0.0\\system.formats.asn1.5.0.0.nupkg.sha512",
     "C:\\Users\\u764886\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.1.2\\system.identitymodel.tokens.jwt.7.1.2.nupkg.sha512",
@@ -87,7 +92,14 @@
     "C:\\Users\\u764886\\.nuget\\packages\\system.text.json\\8.0.0\\system.text.json.8.0.0.nupkg.sha512",
     "C:\\Users\\u764886\\.nuget\\packages\\system.threading.channels\\6.0.0\\system.threading.channels.6.0.0.nupkg.sha512",
     "C:\\Users\\u764886\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\u764886\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
+    "C:\\Users\\u764886\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
+    "C:\\Users\\u764886\\.nuget\\packages\\xunit\\2.7.0\\xunit.2.7.0.nupkg.sha512",
+    "C:\\Users\\u764886\\.nuget\\packages\\xunit.abstractions\\2.0.3\\xunit.abstractions.2.0.3.nupkg.sha512",
+    "C:\\Users\\u764886\\.nuget\\packages\\xunit.analyzers\\1.11.0\\xunit.analyzers.1.11.0.nupkg.sha512",
+    "C:\\Users\\u764886\\.nuget\\packages\\xunit.assert\\2.7.0\\xunit.assert.2.7.0.nupkg.sha512",
+    "C:\\Users\\u764886\\.nuget\\packages\\xunit.core\\2.7.0\\xunit.core.2.7.0.nupkg.sha512",
+    "C:\\Users\\u764886\\.nuget\\packages\\xunit.extensibility.core\\2.7.0\\xunit.extensibility.core.2.7.0.nupkg.sha512",
+    "C:\\Users\\u764886\\.nuget\\packages\\xunit.extensibility.execution\\2.7.0\\xunit.extensibility.execution.2.7.0.nupkg.sha512"
   ],
   "logs": []
 }
