@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\u764886\\Desktop\\Navigation\\api\\api.csproj": {}
+    "c:\\Users\\U764886\\Desktop\\Navigation\\api\\api.csproj": {}
   },
   "projects": {
-    "c:\\Users\\u764886\\Desktop\\Navigation\\api\\api.csproj": {
+    "c:\\Users\\U764886\\Desktop\\Navigation\\api\\api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\u764886\\Desktop\\Navigation\\api\\api.csproj",
+        "projectUniqueName": "c:\\Users\\U764886\\Desktop\\Navigation\\api\\api.csproj",
         "projectName": "api",
-        "projectPath": "c:\\Users\\u764886\\Desktop\\Navigation\\api\\api.csproj",
-        "packagesPath": "C:\\Users\\u764886\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\u764886\\Desktop\\Navigation\\api\\obj\\",
+        "projectPath": "c:\\Users\\U764886\\Desktop\\Navigation\\api\\api.csproj",
+        "packagesPath": "C:\\Users\\U764886\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\U764886\\Desktop\\Navigation\\api\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\u764886\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\U764886\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -94,6 +89,18 @@
               "target": "Package",
               "version": "[8.0.2, )"
             },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.0.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.70, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
@@ -101,6 +108,18 @@
             "xunit": {
               "target": "Package",
               "version": "[2.7.0, )"
+            },
+            "xunit.runner.console": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.7.0, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.5.7, )"
             }
           },
           "imports": [

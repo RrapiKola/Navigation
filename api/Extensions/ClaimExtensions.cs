@@ -1,16 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
-using System.Threading.Tasks;
 
 namespace api.Extensions
 {
-  public static class ClaimExtensions
-  {
-    public static string GetUsername(this ClaimsPrincipal user)
+    public static class ClaimExtensions
     {
-      return user.Claims.SingleOrDefault(x => x.Type.Equals("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname")).Value;
+        public static string GetUsername(this ClaimsPrincipal user)
+        {
+            var givenNameClaim = user?.Claims?.SingleOrDefault(x => x.Type.Equals("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname"));
+
+            // Check if the givenNameClaim is not null before accessing its Value property
+            return givenNameClaim?.Value;
+        }
     }
-  }
 }

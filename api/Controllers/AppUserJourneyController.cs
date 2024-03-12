@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using api.Data;
 using api.Dtos.Journey;
 using api.Extensions;
@@ -40,6 +36,11 @@ namespace api.Controllers
         public async Task<IActionResult> FindUserJourneys()
         {
             var username = User.GetUsername();
+            if (username == null)
+            {
+
+                return BadRequest("Username not found in claims");
+            }
             var appUser = await userManager.FindByNameAsync(username);
             if (appUser == null)
             {

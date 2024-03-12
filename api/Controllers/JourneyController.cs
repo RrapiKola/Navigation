@@ -1,15 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using api.Data;
-using api.Extensions;
 using api.Interfaces;
 using api.Mappers;
-using api.Models;
 using api.Utilities;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace api.Controllers
