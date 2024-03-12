@@ -1,0 +1,55 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\U764886\\Desktop\\Navigation\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E48B14B7-A6D8-4087-B2A6-7B89FA42178B}|api\\api.csproj|c:\\users\\u764886\\desktop\\navigation\\api\\tests\\appuserjourneycontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E48B14B7-A6D8-4087-B2A6-7B89FA42178B}|api\\api.csproj|solutionrelative:api\\tests\\appuserjourneycontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppUserJourneyControllerTests.cs",
+              "DocumentMoniker": "C:\\Users\\U764886\\Desktop\\Navigation\\api\\Tests\\AppUserJourneyControllerTests.cs",
+              "RelativeDocumentMoniker": "api\\Tests\\AppUserJourneyControllerTests.cs",
+              "ToolTip": "C:\\Users\\U764886\\Desktop\\Navigation\\api\\Tests\\AppUserJourneyControllerTests.cs",
+              "RelativeToolTip": "api\\Tests\\AppUserJourneyControllerTests.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAACIAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T20:52:27.846Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

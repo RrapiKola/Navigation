@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\U764886\\Desktop\\Navigation\\api\\api.csproj": {}
+    "C:\\Users\\U764886\\Desktop\\Navigation\\api\\api.csproj": {}
   },
   "projects": {
-    "c:\\Users\\U764886\\Desktop\\Navigation\\api\\api.csproj": {
+    "C:\\Users\\U764886\\Desktop\\Navigation\\api\\api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\U764886\\Desktop\\Navigation\\api\\api.csproj",
+        "projectUniqueName": "C:\\Users\\U764886\\Desktop\\Navigation\\api\\api.csproj",
         "projectName": "api",
-        "projectPath": "c:\\Users\\U764886\\Desktop\\Navigation\\api\\api.csproj",
+        "projectPath": "C:\\Users\\U764886\\Desktop\\Navigation\\api\\api.csproj",
         "packagesPath": "C:\\Users\\U764886\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\U764886\\Desktop\\Navigation\\api\\obj\\",
+        "outputPath": "C:\\Users\\U764886\\Desktop\\Navigation\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\U764886\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -104,6 +104,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
+            },
+            "Swashbuckle.AspNetCore.Swagger": {
+              "target": "Package",
+              "version": "[6.5.0, )"
             },
             "xunit": {
               "target": "Package",
