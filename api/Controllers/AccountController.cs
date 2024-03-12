@@ -94,13 +94,15 @@ namespace api.Controllers
                     }
                     else
                     {
-                        return StatusCode(500, roleResult.Errors);
+                        return StatusCode(500, new { Errors = roleResult.Errors.Select(e => e.Description) });
+
                     }
 
                 }
                 else
                 {
-                    return StatusCode(500, createdUser.Errors);
+                    return StatusCode(500, new { Errors = createdUser.Errors.Select(e => e.Description) });
+
                 }
 
             }

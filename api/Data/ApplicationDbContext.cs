@@ -19,6 +19,16 @@ namespace api.Data
         public DbSet<Journey> Journeys { get; set; }
         public DbSet<AppUserJourney> AppUserJourneys { get; set; }
 
+        // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        // {
+        //     var configuration = new ConfigurationBuilder()
+        //         .SetBasePath(Directory.GetCurrentDirectory())
+        //         .AddJsonFile("appsettings.json")
+        //         .Build();
+
+        //     optionsBuilder.UseNpgsql(configuration.GetConnectionString("DefaultConnection"));
+        // }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -27,6 +37,7 @@ namespace api.Data
 
             builder.Entity<AppUserJourney>().HasOne(u => u.AppUser).WithMany(u => u.AppUserJourneys).HasForeignKey(a => a.AppUserId);
             builder.Entity<AppUserJourney>().HasOne(u => u.Journey).WithMany(u => u.AppUserJourneys).HasForeignKey(a => a.JourneyId);
+             
 
             base.OnModelCreating(builder);
             List<IdentityRole> roles = new List<IdentityRole>{

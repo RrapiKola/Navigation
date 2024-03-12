@@ -7,7 +7,7 @@ using api.Dtos.Account.Journey;
 using api.Dtos.Journey;
 using api.Interfaces;
 using api.Mappers;
-using api.Migrations;
+
 using api.Models;
 using api.Utilities;
 using Microsoft.EntityFrameworkCore;
