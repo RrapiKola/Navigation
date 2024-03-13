@@ -13,6 +13,6 @@ namespace api.Interfaces
     DbSet<AppUserJourney> AppUserJourneys { get; set; }
 
 
-    Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
+    
 }
 }

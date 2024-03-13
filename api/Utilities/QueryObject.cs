@@ -12,7 +12,6 @@ namespace api.Utilities
 
         public string UserId { get; set; } = string.Empty;
 
-        // You can specify a range of valid values for TransportationType if needed
         public TransportationType? TransportationType { get; set; }
 
         [DataType(DataType.DateTime, ErrorMessage = "Invalid StartTime format")]
