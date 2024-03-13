@@ -12,7 +12,5 @@ namespace api.Interfaces
     DbSet<Journey> Journeys { get; set; }
     DbSet<AppUserJourney> AppUserJourneys { get; set; }
 
-
-    
 }
 }
