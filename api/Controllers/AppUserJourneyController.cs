@@ -1,3 +1,4 @@
+using System.Transactions;
 using api.Data;
 using api.Dtos.Journey;
 using api.Extensions;
@@ -57,6 +58,8 @@ namespace api.Controllers
         [HttpPost]
         public async Task<IActionResult> AddUserJourney(CreateJourneyDto dto)
         {
+            using (var transaction = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
+            {
             var username = User.GetUsername();
             var appUser = await userManager.FindByNameAsync(username);
 
@@ -105,6 +108,7 @@ namespace api.Controllers
                 return Created(nameof(AddUserJourney), updatedJourneyDto);
             }
         }
+    }
 
         [Authorize]
         [HttpDelete]
@@ -129,8 +133,6 @@ namespace api.Controllers
             }
 
             return Ok();
-
-
         }
 
     }
